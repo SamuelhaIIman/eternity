@@ -42,10 +42,14 @@ con.connect(function(err) {
 // });
 
 con.connect(function(err) {
-    //let sql = "DESCRIBE eternity";
+    let sql2 = "DESCRIBE eternity";
     let sql = "SELECT * FROM eternity";
     //let sql = "INSERT INTO eternity (PersonId, FirstName, LastName, City) Values (1, 'Samuel', 'Hallman', 'Lahti')";
     if (err) throw err;
+    con.query(sql2, function(err, result, fields) {
+    if (err) throw err;
+        console.log(result);
+    }); 
     con.query(sql, function(err, result, fields) {
     if (err) throw err;
         console.log(result);
