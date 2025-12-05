@@ -1,13 +1,13 @@
 // Import the HTTP module
 const http = require('http');
 
-// Create a server object
 const server = http.createServer((req, res) => {
-  // Set the response HTTP header with HTTP status and Content type
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  // Set status code and multiple headers
+  res.writeHead(200, {
+    'Content-Type': 'text/html'
+  });
 
-  // Send the response body as 'Hello, World!'
-  res.end('Hello, World!\n');
+  res.end('<h1>Hello, World!</h1>');
 });
 
 // Define the port to listen on const PORT = 3000;
