@@ -1,13 +1,21 @@
 // Import the HTTP module
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
 const server = http.createServer((req, res) => {
-  // Set status code and multiple headers
-  res.writeHead(200, {
-    'Content-Type': 'text/html'
-  });
+  const filePath = path.join(__dirname, 'index.html');
 
-  res.end('<h1>Hello, World!</h1>');
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(500);
+      res.end('Error loading file');
+      return;
+    }
+
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(data);
+  });
 });
 
 // Define the port to listen on const PORT = 3000;
