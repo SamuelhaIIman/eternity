@@ -1,0 +1,23 @@
+body {
+    background-color: #0f0f0f;
+    margin: 0px;
+}
+
+.item_buy {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    border: solid red 1px;
+}
+.item_display {
+    display: flex;
+    justify-content: center;
+    border: solid green 1px;
+    width: 100%;
+}
+.red_box {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
