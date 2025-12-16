@@ -2,6 +2,9 @@ body {
     background-color: #0f0f0f;
     margin: 0px;
 }
+h2 {
+    color: rgb(241, 241, 241);
+}
 
 .item_buy {
     width: 300px;
