@@ -1,4 +1,4 @@
-async function budget() {
+window.onload = function() {
     function calculateMonthlyInvestment(monthlyContribution, annualInterestRate, totalYears) {
         let totalAmount = 0;
         let months = totalYears * 12;
@@ -14,7 +14,7 @@ async function budget() {
     console.log(calculateMonthlyInvestment(100, 0.12, 40).toFixed(2));
     let ans = calculateMonthlyInvestment(100, 0.12, 40).toString();
     console.log(ans);
-    document.getElementsByClassName("budget").innerHTML = ans;
+    document.querySelector(".budget").innerHTML = ans;
+    budget();
 }
 
-budget();
