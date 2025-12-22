@@ -6,6 +6,15 @@ h2 {
     color: rgb(241, 241, 241);
 }
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 .item_buy {
     width: 300px;
     height: 300px;
