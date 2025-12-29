@@ -1,5 +1,7 @@
 window.onload = function() {
-    const inputNumber = document.querySelector(".input_number");
+    const monthlyContribution = document.querySelector(".monthly_contribution");
+    const annualInterestRate = document.querySelector(".annual_interest_rate");
+    const totalYears = document.querySelector(".total_years");
     const budgetButton = document.querySelector(".calculate");
     const budgetDisplay = document.querySelector(".budget");
 
@@ -17,15 +19,13 @@ window.onload = function() {
     }
 
     budgetButton.addEventListener("click", () => {
-        const contribution = Number(inputNumber.value);
+        const contribution = Number(monthlyContribution.value);
+        const interestRate = Number(annualInterestRate.value);
+        const years = Number(totalYears.value);
         if (!contribution) return;
 
-        const result = calculateMonthlyInvestment(contribution, 0.12, 40);
+        const result = calculateMonthlyInvestment(contribution, interestRate, years);
         budgetDisplay.innerHTML = result;
     });
-    // console.log(calculateMonthlyInvestment(100, 0.12, 40).toFixed(2));
-    // let ans = calculateMonthlyInvestment(100, 0.12, 40).toString();
-    // console.log(ans);
-    // document.querySelector(".budget").innerHTML = ans;
 }
 
